@@ -1,4 +1,18 @@
-n = 4
+"""
+.: empty node
+P: pit -> death
+W: wumpus -> death
+G: gold
+"""
+
+table = [
+    ['.', '.', 'P', '.'],
+    ['.', '.', '.', 'P'],
+    ['P', 'W', '.', '.'],
+    ['.', '.', 'P', 'G']
+]
+
+n = len(table)
 
 
 class Node:
@@ -33,3 +47,16 @@ class Node:
 
 
 nodes = [[Node(x, y) for x in range(n + 1)] for y in range(n + 1)]
+
+
+def config_nodes():
+    for i in range(n):
+        for j in range(n):
+            if table[i][j] == 'W':
+                nodes[i][j].wumpus = True
+            elif table[i][j] == 'P':
+                nodes[i][j].pit = True
+            elif table[i][j] == 'G':
+                nodes[i][j].glitter = True
+
+

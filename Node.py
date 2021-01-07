@@ -24,6 +24,9 @@ class Node:
         self.glitter = glitter
         self.visited = visited
 
+    def state(self):  # map every node to int, to use it as state id in Q-function
+        return n * self.x + self.y
+
     def get_adj_nodes(self):
         return [nodes[self.x + 1][self.y], nodes[self.x - 1][self.y], nodes[self.x][self.y + 1],
                 nodes[self.x][self.y - 1]]

@@ -3,13 +3,16 @@ from consts import *
 
 
 class Agent:
-    def __init__(self, current_node):
+    def __init__(self, current_node=nodes[0][0]):
         self.current_node = current_node
 
     def respawn(self):
         state = self.current_node.state()
         self.current_node = nodes[0][0]
         return state
+
+    def state(self):
+        return self.current_node.state()
 
     def move(self, action):
         """

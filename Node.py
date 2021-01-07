@@ -24,5 +24,12 @@ class Node:
                 return True
         return False
 
+    def breeze(self):
+        adj_nodes = self.get_adj_nodes()
+        for node in adj_nodes:
+            if node.pit:
+                return True
+        return False
+
 
 nodes = [[Node(x, y) for x in range(n + 1)] for y in range(n + 1)]

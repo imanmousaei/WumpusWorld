@@ -26,9 +26,9 @@ class Agent:
             reward: score given for only this action
         """
         if action == 0:
-            self.current_node = nodes[self.current_node.x][min(self.current_node.y+1, n)]
+            self.current_node = nodes[self.current_node.x][min(self.current_node.y+1, n-1)]
         elif action == 1:
-            self.current_node = nodes[min(self.current_node.x+1, n)][self.current_node.y]
+            self.current_node = nodes[min(self.current_node.x+1, n-1)][self.current_node.y]
         elif action == 2:
             self.current_node = nodes[max(self.current_node.x-1, 0)][self.current_node.y]
         elif action == 3:

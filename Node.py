@@ -1,18 +1,4 @@
-"""
-.: empty node
-P: pit -> death
-W: wumpus -> death
-G: gold
-"""
-
-table = [
-    ['.', '.', 'P', '.'],
-    ['.', '.', '.', 'P'],
-    ['P', 'W', '.', '.'],
-    ['.', '.', 'P', 'G']
-]
-
-n = len(table)
+from consts import table, n
 
 
 class Node:
@@ -49,7 +35,7 @@ class Node:
         return False
 
 
-nodes = [[Node(x, y) for x in range(n + 1)] for y in range(n + 1)]
+nodes = [[Node(x, y) for x in range(n)] for y in range(n)]
 
 
 def config_nodes():
